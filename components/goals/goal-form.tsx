@@ -45,7 +45,7 @@ export function GoalForm({ goal, onSuccess, onCancel }: GoalFormProps) {
         title,
         description,
         goalType,
-        specificDays: goalType === "specific-days" ? specificDays : undefined,
+        specificDays: goalType === "specific-days" ? specificDays : [],
         category: category || undefined,
         userId: user.uid,
         isActive: true,
