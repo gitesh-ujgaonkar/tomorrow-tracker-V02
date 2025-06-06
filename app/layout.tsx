@@ -29,7 +29,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="icon" href="/favicon_io/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon_io/favicon-32x32.png" type="image/png" sizes="32x32"/>
+        <link rel="apple-touch-icon" href="/favicon_io/apple-touch-icon.png" sizes="180x180"/>
+        <link rel="mask-icon" href="/favicon_io/safari-pinned-tab.svg" color="#5bbad5"/>
+        <link rel="manifest" href="/favicon_io/site.webmanifest"/>
+        <meta name="msapplication-TileColor" content="#da532c"/>
+        <meta name="theme-color" content="#ffffff"/>
+        
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Tomorrow Tracker" />

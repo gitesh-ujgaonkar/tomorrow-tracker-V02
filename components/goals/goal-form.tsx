@@ -32,7 +32,7 @@ export function GoalForm({ goal, onSuccess, onCancel }: GoalFormProps) {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleDayToggle = (day: string) => {
-    setSpecificDays((prev) => (prev.includes(day) ? prev.filter((d) => d !== day) : [...prev, day]))
+    setSpecificDays((prev: string[]) => (prev.includes(day) ? prev.filter((d: string) => d !== day) : [...prev, day]))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,7 +46,7 @@ export function GoalForm({ goal, onSuccess, onCancel }: GoalFormProps) {
         description,
         goalType,
         specificDays: goalType === "specific-days" ? specificDays : [],
-        category: category || undefined,
+        category: category.trim() || null,
         userId: user.uid,
         isActive: true,
       }
@@ -77,7 +77,7 @@ export function GoalForm({ goal, onSuccess, onCancel }: GoalFormProps) {
             <Input
               id="title"
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
               placeholder="Enter goal title"
               required
             />
@@ -88,7 +88,7 @@ export function GoalForm({ goal, onSuccess, onCancel }: GoalFormProps) {
             <Textarea
               id="description"
               value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
               placeholder="Describe your goal"
               rows={3}
             />
@@ -99,7 +99,7 @@ export function GoalForm({ goal, onSuccess, onCancel }: GoalFormProps) {
             <Input
               id="category"
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCategory(e.target.value)}
               placeholder="e.g., Health, Work, Personal"
             />
           </div>
